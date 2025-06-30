@@ -1,6 +1,5 @@
 import "express-async-errors";
 import { config } from "dotenv";
-config({ path: "../.env"});
 import express from "express";
 import mongoose from "mongoose";
 import cookieParser from "cookie-parser";
@@ -22,6 +21,7 @@ import adminRouter from "./routes/admin.router.js"; // Import the admin router
 import notificationRouter from "./routes/notification.router.js"; // Import the notification router
 import { initSocketServer, initNotificationService } from "./utils/socket.js";
 
+config();
 
 const app = express();
 app.use(express.urlencoded({ extended: true }));

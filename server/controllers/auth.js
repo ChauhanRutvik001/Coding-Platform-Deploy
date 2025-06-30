@@ -5,8 +5,8 @@ import { BadRequestError, NotFoundError } from "../utils/errors.js";
 import jwt from "jsonwebtoken";
 import { v4 as uuidv4 } from "uuid";
 import cron from "node-cron";
-import { config } from "dotenv";
-config({ path: "../.env" });
+import dotenv from "dotenv";
+dotenv.config();
 
 export const login = async (req, res) => {
   console.log("login Api hit");
